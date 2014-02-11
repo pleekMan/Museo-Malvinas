@@ -25,42 +25,4 @@ class testApp : public ofBaseApp{
     ofImage background;
     Navigator navigator01;
     
-    /*
-    void pressedOption1(){
-        option1.color.setColor(ofColor(255)));
-        option1.color.animateTo(193029).
-        
-        imagenPrincipal.setPtr(thumnail1);
-        imagenPrincial.mask.animtatto)10.
-        
-    }
-    
-    draw(){
-        title.draw();
-        
-        option1.draw(0,title.height);
-        option2.draw
-    }
-    
-    ofxAnimatableObject<ofImage> title;
-    
-     ofxAnimatableObject<ofImageMasked> option1;
-    
-     ofxAnimatableObject<ofImage> img;
-    
-    
-     ofxAnimatableObject<ofImage *> imgPrincipal;
-    
-    
-     ofxAnimatableObject<ofImage> img;
-    
-    ofxAniObject<ofNavegador> navegador;
-	*/
 };
-
-/*
-class ofNavegador : ofFbo{
-    
-    
-}
-*/

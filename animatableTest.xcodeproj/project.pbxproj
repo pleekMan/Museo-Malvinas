@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
+		CE432EC618A9697700C07B93 /* ContentHolder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE432EC418A9697600C07B93 /* ContentHolder.cpp */; };
 		CE45514818A57ADB00B523B8 /* Navigator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE45514618A57ADB00B523B8 /* Navigator.cpp */; };
 		CE45515518A57D4600B523B8 /* ofxAnimatable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE45514B18A57D4600B523B8 /* ofxAnimatable.cpp */; };
 		CE45515618A57D4600B523B8 /* ofxAnimatableFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE45514D18A57D4600B523B8 /* ofxAnimatableFloat.cpp */; };
@@ -67,6 +68,8 @@
 /* Begin PBXFileReference section */
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		CE432EC318A954FD00C07B93 /* animatableTestDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = animatableTestDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE432EC418A9697600C07B93 /* ContentHolder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ContentHolder.cpp; sourceTree = "<group>"; };
+		CE432EC518A9697700C07B93 /* ContentHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentHolder.h; sourceTree = "<group>"; };
 		CE45514618A57ADB00B523B8 /* Navigator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Navigator.cpp; sourceTree = "<group>"; };
 		CE45514718A57ADB00B523B8 /* Navigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Navigator.h; sourceTree = "<group>"; };
 		CE45514B18A57D4600B523B8 /* ofxAnimatable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAnimatable.cpp; sourceTree = "<group>"; };
@@ -233,6 +236,8 @@
 				E4B69E1F0A3A1BDC003C02F2 /* testApp.h */,
 				CE45514618A57ADB00B523B8 /* Navigator.cpp */,
 				CE45514718A57ADB00B523B8 /* Navigator.h */,
+				CE432EC418A9697600C07B93 /* ContentHolder.cpp */,
+				CE432EC518A9697700C07B93 /* ContentHolder.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -340,6 +345,7 @@
 				CE45515618A57D4600B523B8 /* ofxAnimatableFloat.cpp in Sources */,
 				CE45515718A57D4600B523B8 /* ofxAnimatableOfColor.cpp in Sources */,
 				CE45515818A57D4600B523B8 /* ofxAnimatableOfPoint.cpp in Sources */,
+				CE432EC618A9697700C07B93 /* ContentHolder.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
