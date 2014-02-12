@@ -24,7 +24,7 @@ public:
     ContentHolder(){};
     ~ContentHolder(){};
 
-    void fill(string path);
+    void setup(string path);
     void appear(float delay);
     void disappear();
     void update(float time);
@@ -46,5 +46,8 @@ public:
     int nextText;
 
     string path;
+    
+private:
+    void reset();
 
 };

@@ -15,6 +15,8 @@
 #include "ofxAnimatableObject.h"
 #include "ofxAnimatableImageMasked.h"
 #include "ContentHolder.h"
+#include "FunkyRect.h"
+#include "Wave.h"
 
 
 #endif /* defined(__animatableTest__Navigator__) */
@@ -43,13 +45,18 @@ class Navigator : public ofFbo{
     ofxAnimatableObject<ofImage> titulo;
 
     vector< ofxAnimatableObject<ofImage> > buttons;
-
+    vector <ofPoint> buttonBackPos;
+    vector <FunkyRect> buttonsBackG;
+    
 
     int currentContent;
     int nextContent;
 
     vector< ContentHolder > contents;
 
+    Wave wave;
+    FunkyRect swizzer;
+    vector <FunkyRect> beepers;
 
 
 

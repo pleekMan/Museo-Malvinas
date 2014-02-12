@@ -8,7 +8,7 @@ void testApp::setup(){
     navigator01.setup("Navigator_0",ofPoint(20.0,20.0));
     navigator01.allocate(navigator01.width , navigator01.height);
     navigator01.appear();
-
+    
 }
 
 //--------------------------------------------------------------
@@ -29,6 +29,13 @@ void testApp::draw(){
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
+    
+    if (key == '1') {
+        navigator01.appear();
+    }
+    if (key == '2') {
+        navigator01.disappear();
+    }
 
 }
 
