@@ -11,105 +11,147 @@
 void Navigator::setup(string p,ofPoint initPos){
     path = p;
 
-    x = initPos.x;
-    y = initPos.y;
-    width = height = 700;
+    width = height = 710;
     
-    
+    visible = false;
+        
     fbo.allocate(width, height);
-
 
     titulo.loadImage(path + "/titulo.png");
     titulo.setAnchorPercent(0, 0);
     titulo.setPosition(ofPoint(0, 0));
     titulo.setColor(255,0);
-    titulo.color.setDuration(0.3);
+    titulo.color.setDuration(1.);
     titulo.color.setRepeatType(PLAY_ONCE);
     titulo.color.setCurve(BLINK_AND_FADE_3);
+    
+    close.loadImage(path + "/../closeButton.png");
+    close.setAnchorPercent(0, 0);
+    close.setPosition(ofPoint(650, 10));
+    close.setColor(255,0);
+    close.color.setDuration(1.);
+    close.color.setRepeatType(PLAY_ONCE);
+    close.color.setCurve(BLINK_AND_FADE_3);
 
     // BOTONES y CONTENT HOLDERS
     for(int i=0; ofDirectory::doesDirectoryExist(path + "/Content_" + ofToString(i)); i++){
-        ofxAnimatableObject<ofImage> button;
-        button.loadImage(path + "/Content_" + ofToString(i) + "/button.png");
-        button.setAnchorPercent(0, 0);
-        button.setPosition(ofPoint(0, 70 + 45*i));
-        button.setRotation(ofPoint(0,90,0));
-        button.rotation.setDuration(1.0);
-        button.rotation.setRepeatType(PLAY_ONCE);
-        button.rotation.setCurve(TANH);
-        button.setColor(255,0);
-        button.color.setDuration(1.0);
-        //
-        buttons.push_back(button);
-
-        ContentHolder content;
-        content.setup(path + "/Content_" + ofToString(i));
-        //
-        contents.push_back(content);
+        cout<<i<<endl;
+        buttons.push_back(ofxAnimatableObject<ofImage>());
+        contents.push_back(ContentHolder());
+        buttonsBackG.push_back(FunkyRect());
     }
-    
-    for (int i=0; i<buttons.size(); i++){
-        //buttonBackPos.push_back(ofPoint(buttons[i].position.getCurrentPosition()));
-        
-        FunkyRect currentButtonBackG;
-        currentButtonBackG.setup(false, buttons[i].position.getCurrentPosition(), buttons[i].getWidth(), buttons[i].getHeight());
-        buttonsBackG.push_back(currentButtonBackG);
+    for(int i=0; i<buttons.size(); i++){
+        buttons[i].loadImage(path + "/Content_" + ofToString(i) + "/button.png");
+        buttons[i].setAnchorPercent(0.0, 0.0);
+        buttons[i].setPosition(ofPoint(0, 50 + 32*i));
+        buttons[i].setRotation(ofPoint(0,90,0));
+        buttons[i].rotation.setDuration(0.7);
+        buttons[i].rotation.setRepeatType(PLAY_ONCE);
+        buttons[i].rotation.setCurve(TANH);
+        buttons[i].setColor(255,0);
+        buttons[i].color.setDuration(1.0);
+    }
+    for(int i=0; i<contents.size(); i++){
+        contents[i].setup(path + "/Content_" + ofToString(i),ofPoint(0,150));
+    }
+    for(int i=0; i<buttonsBackG.size(); i++){
+        buttonsBackG[i].setup(false, buttons[i].position.getCurrentPosition(), buttons[i].getWidth(), buttons[i].getHeight());
     }
 
     currentContent = nextContent = 0;
-    buttonsBackG[0].setToStateColor(true);
     
-    wave.setup();
-    swizzer.setup(true, ofPoint(30,230), 1, 40);
+    //wave.setup();
+    //swizzer.setup(true, ofPoint(30,230), 1, 40);
+    /*
     for (int i=0; i < 3; i++) {
         FunkyRect currentBeeper = FunkyRect();
         currentBeeper.setup(i % 2, ofPoint(30 * i,20), 10, 10);
         beepers.push_back(currentBeeper);
     }
+     */
+    //stripper.setup();
     
+    triangle.loadImage(path + "/triangle.png");
+    triangle.setAnchorPercent(0.5, 0.5);
+    triangle.setPosition(ofPoint(650, 680, 0));
+    //triangle.position.setDuration(0.5);
+    //triangle.position.setRepeatType(LOOP_BACK_AND_FORTH);
+    triangle.setColor(255,0);
 
 }
 
-void Navigator::appear(){
+void Navigator::appear(float delay){
+    
+    visible = true;
 
-    titulo.color.animateToAlpha(255);
-
-    float delay = 0.;
+    titulo.color.animateToAfterDelay(ofColor(255,255),delay);
+    close.color.animateToAfterDelay(ofColor(255,255),delay);
+    
+    delay+=1.;
 
     ofPoint rotateTo = ofPoint(0,0,0);
     for(int i=0;i<buttons.size();i++){
+        buttons[i].rotation.setDuration(.7);
         buttons[i].rotation.animateToAfterDelay(ofPoint(rotateTo), delay + i*0.2);
-        buttons[i].color.animateToAlpha(255);
+        buttons[i].color.animateToAfterDelay(ofColor(255,255),delay);
     }
-    buttons[currentContent].color.animateToAfterDelay(ofColor(255,255), delay + currentContent*0.2);
-
+    //buttons[currentContent].color.animateToAfterDelay(ofColor(255,255), delay + currentContent*0.2);
+    //stripper.appear(delay);
+    
+    triangle.color.animateToAfterDelay(ofColor(255,255),delay);
+    //triangle.position.animateToAfterDelay(ofPoint(330, 640),delay);
 
     delay += 0.5;
 
-    contents[currentContent].appear(delay);}
+    contents[currentContent].appear(delay);
+
+    buttonsBackG[currentContent].appear(delay);
+        
+}
 
 void Navigator::disappear(){
-
+    
     titulo.color.animateToAlpha(0);
+    close.color.animateToAlpha(0);
 
     ofPoint rotateTo = ofPoint(0,90,0);
     for(int i=0;i<buttons.size();i++){
+        buttons[i].rotation.setDuration(.7);
         buttons[i].rotation.animateTo(ofPoint(rotateTo));
         buttons[i].color.animateToAlpha(0);
     }
+    
+    //stripper.disappear();
+    
+    triangle.color.animateTo(ofColor(255,0));
+    
     contents[currentContent].disappear();
+    
+    for(int i=0;i < buttonsBackG.size();i++){
+        buttonsBackG[i].disappear();;
+    }
+    
+    visible = false;
+    
 }
 
 void Navigator::update(float time){
     
+    //buttons[i].color.animateToAlpha(0);
+    
     ofSetColor(255);
+    
+    fbo.update(time);
 
     titulo.update(time);
+    close.update(time);
 
     if(nextContent != currentContent){
         if( !contents[currentContent].isOrWillBeAnimating() ){
             currentContent = nextContent;
             contents[currentContent].appear(0.0);
+            
+            triangle.color.animateTo(ofColor(255,255));
         }
     }
 
@@ -120,14 +162,17 @@ void Navigator::update(float time){
     for(int i=0;i<buttons.size();i++){
         buttons[i].update(time);
     }
-    
-
 
     contents[currentContent].update(time);
 
     swizzer.rotate(ofMap(ofGetFrameNum() % 70, 0, 70, 0, TWO_PI));
     swizzer.update(time);
     
+    //stripper.update(time);
+    triangle.update(time);
+
+    
+    /*
     for(int i=0;i<beepers.size();i++){
         
         if (ofGetFrameNum() % 10 == 0) {
@@ -136,15 +181,20 @@ void Navigator::update(float time){
         
         beepers[i].update(time);
     }
+     */
+
+   
+    //cout << ofToString(buttons[0].color.getCurrentColor().a) << endl;
     
-
-
     // DRAW INTO FBO
     fbo.begin();
 
     ofClear(0,0);
+    
+    
 
     titulo.draw();
+    close.draw();
     
 
     for(int i=0;i < buttonsBackG.size();i++){
@@ -162,35 +212,26 @@ void Navigator::update(float time){
     ofNoFill();
     ofRect(0, 0, fbo.getWidth(), fbo.getHeight());
     
-    wave.draw();
-    
-    swizzer.draw();
-    
-    for(int i=0;i<beepers.size();i++){
-        beepers[i].draw();
-    }
-
+    drawMisc();
 
     fbo.end();
+    
+
 }
 
 void Navigator::draw(){
-
-    ofColor(255,255);
-    fbo.ofFbo::draw(x, y);
-
+    fbo.draw();
 }
 
 void Navigator::checkClick(int mx, int my){
 
     // CHECK IF MOUSE IS INSIDE NAVIGATOR BEFORE CONTINUING
-    if(mx > x && mx < x + fbo.getHeight() && my > y && y + fbo.getHeight()){
-        
-        
+    if(fbo.inside(ofPoint(mx,my))){
+        ofPoint mouse = ( ofPoint(mx,my) - fbo.position.getCurrentPosition() ) / fbo.size.val();
         
         for(int i=0;i<buttons.size();i++){
             
-            if (buttons[i].inside(ofPoint(mx - x, my - y))) {
+            if (buttons[i].inside(mouse)) {
                 cout << "Boton " << i << " - Pressed" << endl;
                 optionPressed(i);                
             }
@@ -198,9 +239,24 @@ void Navigator::checkClick(int mx, int my){
 
 
         for(int i=0;i<contents[currentContent].thumbs.size();i++){
-            if (contents[currentContent].thumbs[i].inside(ofPoint(mx - x, my - y))) {
+            if (contents[currentContent].thumbs[i].inside(mouse)) {
                 cout << "Thumb " << i << " - Pressed" << endl;
                 contents[currentContent].thumbPressed(i);
+            }
+        }
+        
+        
+        ofxAnimatableImageMasked currentText = contents[currentContent].texts[contents[currentContent].currentText];
+        
+        if (currentText.inside(mouse)) {
+            cout << "Text - Pressed" << endl;
+            if( mouse.x > currentText.position.getCurrentPosition().x + (currentText.getWidth() * 0.5)){
+                contents[currentContent].textPressed(true);
+                cout << "Text Forward" << endl;
+            }
+            else{
+                contents[currentContent].textPressed(false);
+                cout << "Text Backwards" << endl;
             }
         }
 
@@ -208,22 +264,48 @@ void Navigator::checkClick(int mx, int my){
 
 }
 
-void Navigator::optionPressed(int selection){
+bool Navigator::closePressed(int mx, int my){
     
-    for(int i=0;i < buttonsBackG.size();i++){
-        buttonsBackG[i].setToStateColor(false);
-    }
+    ofPoint mouse = ( ofPoint(mx,my) - fbo.position.getCurrentPosition() ) / fbo.size.val();
     
-    buttonsBackG[selection].setToStateColor(true);
+    return close.inside(mouse)?true:false;
+}
 
+void Navigator::optionPressed(int selection){
     if(selection == currentContent || selection == nextContent){
         return;
     }
     else{
+        if(currentContent != nextContent){
+            contents[nextContent].disappear();
+            buttonsBackG[nextContent].disappear();
+        }
         contents[currentContent].disappear();
+        buttonsBackG[currentContent].disappear();
         nextContent = selection;
-
-        buttons[currentContent].color.animateTo(ofColor(255,255));
-        buttons[nextContent].color.animateTo(ofColor(255,255));
+        
+        buttons[nextContent].rotation.setRepeatType(LOOP_BACK_AND_FORTH_ONCE);
+        buttons[nextContent].rotation.setDuration(.2);
+        buttons[nextContent].rotation.animateTo(ofPoint(-45,0,0));
+        buttonsBackG[nextContent].appear(0.);
+        
+        triangle.color.animateTo(ofColor(255,0));
+        //buttons[currentContent].color.animateTo(ofColor(255,255));
+        //buttons[nextContent].color.animateTo(ofColor(255,255));
     }
+}
+
+bool Navigator::isVisible(){
+    return visible;
+}
+
+void Navigator::drawMisc(){
+    
+        //wave.draw();
+        
+        //swizzer.draw();
+
+        triangle.draw();
+        //stripper.draw();
+    
 }

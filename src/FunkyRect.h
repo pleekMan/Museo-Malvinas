@@ -22,18 +22,20 @@ public:
     FunkyRect(){};
     
     void setup(bool state, ofPoint _pos, float _width, float _height);
-    void setState(bool onState);
     void moveTo(ofPoint target);
-    void colorTo(ofColor targetColor);
     void rotate(float angleRad);
-    void setToStateColor(bool onState);
     void update(float time);
     void draw();
     
+    void appear(float delay);
+    void disappear();
+    
     ofxAnimatableOfPoint pos;
+    ofxAnimatableOfPoint rot;
     float angle;
     int width, height;
     ofxAnimatableOfColor color;
+    bool onState;
     
     bool isRotating;
     

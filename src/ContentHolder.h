@@ -24,20 +24,24 @@ public:
     ContentHolder(){};
     ~ContentHolder(){};
 
-    void setup(string path);
+    void setup(string path,ofPoint pos);
     void appear(float delay);
     void disappear();
     void update(float time);
     void draw();
 
     void thumbPressed(int selection);
+    void textPressed(bool forwardDirection);
+    
     bool isOrWillBeAnimating();
-
-
 
     vector < ofxAnimatableObject<ofImage> > thumbs;
     vector < ofxAnimatableImageMasked > images;
-    vector < vector<ofxAnimatableImageMasked> > texts;
+    vector < ofxAnimatableImageMasked > texts;
+    
+    ofxAnimatableImageMasked textBack;
+    ofxAnimatableImageMasked imageBack;
+    ofxAnimatableImageMasked dottedLine;
 
     int currentThumb;
     int nextThumb;

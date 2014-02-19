@@ -11,37 +11,34 @@
 
 void FunkyRect::setup(bool state, ofPoint _pos, float _width, float _height){
     
-    setToStateColor(state);
-    
     color.setDuration(0.5);
+    color.setColor(ofColor(255,0));
     pos.setPosition(_pos);
     width = _width;
     height = _height;
     angle = 0;
+    
+    rot.setRepeatType(LOOP_BACK_AND_FORTH_ONCE);
+    rot.setDuration(0.2);
+    rot.setRepeatType(LOOP_BACK_AND_FORTH_ONCE);
+    rot.setCurve(TANH);
     
     isRotating = false;
     
     
 }
 
-void FunkyRect::setState(bool onState){
-    setToStateColor(onState);
-}
-
 void FunkyRect::update(float time){
     pos.update(time);
     color.update(time);
-    
-    
-
-
+    rot.update(time);
 }
 
 void FunkyRect::draw(){
-    
-    if (isRotating) {
-           
     ofPushMatrix();
+    ofPushStyle();
+    if (isRotating) {
+        
     ofTranslate(pos.getCurrentPosition().x, pos.getCurrentPosition().y);
     
     ofRotate(ofRadToDeg(angle));
@@ -52,16 +49,22 @@ void FunkyRect::draw(){
     ofRect(-(width * 0.5), -(height * 0.5), width, height);
     ofSetColor(255,255);
     
-    ofPopMatrix();
         
     } else {
         
         ofSetColor(color.getCurrentColor());
         ofFill();
-        ofRect(pos.getCurrentPosition().x, pos.getCurrentPosition().y, width, height);
-        ofSetColor(255,255);
         
+        ofTranslate(pos.getCurrentPosition());
+        ofRotateX(rot.getCurrentPosition().x);
+        ofRotateY(rot.getCurrentPosition().y);
+        ofRotateZ(rot.getCurrentPosition().z);
+        
+        ofRect(0, 0, width, height);
     }
+    ofPopStyle();
+    ofPopMatrix();
+
 }
 
 void FunkyRect::moveTo(ofPoint target){
@@ -73,15 +76,16 @@ void FunkyRect::rotate(float angleRad){
     angle = angleRad;
 }
 
-void FunkyRect::colorTo(ofColor targetColor){
-    color.animateTo(targetColor);
+void FunkyRect::disappear(){
+    color.animateTo(ofColor(255,0));
 }
 
-void FunkyRect::setToStateColor(bool onState){
-    
-    if(onState){
-        color.animateTo(ofColor (255,0,0,255));
-    } else{
-        color.animateTo(ofColor (255,0,0,20));
+void FunkyRect::appear(float delay){
+    if(delay){
+        color.animateToAfterDelay(ofColor(159,54,42,255),delay);
+    }
+    else{
+        color.animateTo(ofColor(159,54,42,255));
+        rot.animateTo(ofPoint(-45,0,0));
     }
 }

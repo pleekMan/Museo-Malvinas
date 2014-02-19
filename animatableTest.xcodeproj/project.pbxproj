@@ -10,12 +10,14 @@
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		CE432EC618A9697700C07B93 /* ContentHolder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE432EC418A9697600C07B93 /* ContentHolder.cpp */; };
 		CE45514818A57ADB00B523B8 /* Navigator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE45514618A57ADB00B523B8 /* Navigator.cpp */; };
-		CE45515518A57D4600B523B8 /* ofxAnimatable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE45514B18A57D4600B523B8 /* ofxAnimatable.cpp */; };
-		CE45515618A57D4600B523B8 /* ofxAnimatableFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE45514D18A57D4600B523B8 /* ofxAnimatableFloat.cpp */; };
-		CE45515718A57D4600B523B8 /* ofxAnimatableOfColor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE45515118A57D4600B523B8 /* ofxAnimatableOfColor.cpp */; };
-		CE45515818A57D4600B523B8 /* ofxAnimatableOfPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE45515318A57D4600B523B8 /* ofxAnimatableOfPoint.cpp */; };
 		CE7357CC18AB171E0029A412 /* FunkyRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE7357CA18AB171E0029A412 /* FunkyRect.cpp */; };
 		CE7357CF18AB30F10029A412 /* Wave.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE7357CD18AB30F10029A412 /* Wave.cpp */; };
+		CE95D7BE18ABE79D005ED0FA /* ofxAnimatable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE95D7B418ABE79D005ED0FA /* ofxAnimatable.cpp */; };
+		CE95D7BF18ABE79D005ED0FA /* ofxAnimatableFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE95D7B618ABE79D005ED0FA /* ofxAnimatableFloat.cpp */; };
+		CE95D7C018ABE79D005ED0FA /* ofxAnimatableOfColor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE95D7BA18ABE79D005ED0FA /* ofxAnimatableOfColor.cpp */; };
+		CE95D7C118ABE79D005ED0FA /* ofxAnimatableOfPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE95D7BC18ABE79D005ED0FA /* ofxAnimatableOfPoint.cpp */; };
+		CE9EE3A818AC146800352B4A /* TriangleBlast.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE9EE3A618AC146800352B4A /* TriangleBlast.cpp */; };
+		CE9EE3AB18AC267E00352B4A /* Stripper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE9EE3A918AC267D00352B4A /* Stripper.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
 		E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */; };
@@ -74,20 +76,24 @@
 		CE432EC518A9697700C07B93 /* ContentHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentHolder.h; sourceTree = "<group>"; };
 		CE45514618A57ADB00B523B8 /* Navigator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Navigator.cpp; sourceTree = "<group>"; };
 		CE45514718A57ADB00B523B8 /* Navigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Navigator.h; sourceTree = "<group>"; };
-		CE45514B18A57D4600B523B8 /* ofxAnimatable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAnimatable.cpp; sourceTree = "<group>"; };
-		CE45514C18A57D4600B523B8 /* ofxAnimatable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAnimatable.h; sourceTree = "<group>"; };
-		CE45514D18A57D4600B523B8 /* ofxAnimatableFloat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAnimatableFloat.cpp; sourceTree = "<group>"; };
-		CE45514E18A57D4600B523B8 /* ofxAnimatableFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAnimatableFloat.h; sourceTree = "<group>"; };
-		CE45514F18A57D4600B523B8 /* ofxAnimatableImageMasked.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAnimatableImageMasked.h; sourceTree = "<group>"; };
-		CE45515018A57D4600B523B8 /* ofxAnimatableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAnimatableObject.h; sourceTree = "<group>"; };
-		CE45515118A57D4600B523B8 /* ofxAnimatableOfColor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAnimatableOfColor.cpp; sourceTree = "<group>"; };
-		CE45515218A57D4600B523B8 /* ofxAnimatableOfColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAnimatableOfColor.h; sourceTree = "<group>"; };
-		CE45515318A57D4600B523B8 /* ofxAnimatableOfPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAnimatableOfPoint.cpp; sourceTree = "<group>"; };
-		CE45515418A57D4600B523B8 /* ofxAnimatableOfPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAnimatableOfPoint.h; sourceTree = "<group>"; };
 		CE7357CA18AB171E0029A412 /* FunkyRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FunkyRect.cpp; sourceTree = "<group>"; };
 		CE7357CB18AB171E0029A412 /* FunkyRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunkyRect.h; sourceTree = "<group>"; };
 		CE7357CD18AB30F10029A412 /* Wave.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Wave.cpp; sourceTree = "<group>"; };
 		CE7357CE18AB30F10029A412 /* Wave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wave.h; sourceTree = "<group>"; };
+		CE95D7B418ABE79D005ED0FA /* ofxAnimatable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAnimatable.cpp; sourceTree = "<group>"; };
+		CE95D7B518ABE79D005ED0FA /* ofxAnimatable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAnimatable.h; sourceTree = "<group>"; };
+		CE95D7B618ABE79D005ED0FA /* ofxAnimatableFloat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAnimatableFloat.cpp; sourceTree = "<group>"; };
+		CE95D7B718ABE79D005ED0FA /* ofxAnimatableFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAnimatableFloat.h; sourceTree = "<group>"; };
+		CE95D7B818ABE79D005ED0FA /* ofxAnimatableImageMasked.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAnimatableImageMasked.h; sourceTree = "<group>"; };
+		CE95D7B918ABE79D005ED0FA /* ofxAnimatableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAnimatableObject.h; sourceTree = "<group>"; };
+		CE95D7BA18ABE79D005ED0FA /* ofxAnimatableOfColor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAnimatableOfColor.cpp; sourceTree = "<group>"; };
+		CE95D7BB18ABE79D005ED0FA /* ofxAnimatableOfColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAnimatableOfColor.h; sourceTree = "<group>"; };
+		CE95D7BC18ABE79D005ED0FA /* ofxAnimatableOfPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAnimatableOfPoint.cpp; sourceTree = "<group>"; };
+		CE95D7BD18ABE79D005ED0FA /* ofxAnimatableOfPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAnimatableOfPoint.h; sourceTree = "<group>"; };
+		CE9EE3A618AC146800352B4A /* TriangleBlast.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TriangleBlast.cpp; sourceTree = "<group>"; };
+		CE9EE3A718AC146800352B4A /* TriangleBlast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleBlast.h; sourceTree = "<group>"; };
+		CE9EE3A918AC267D00352B4A /* Stripper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stripper.cpp; sourceTree = "<group>"; };
+		CE9EE3AA18AC267E00352B4A /* Stripper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stripper.h; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
 		E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
@@ -143,7 +149,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
-				CE45514918A57D2C00B523B8 /* ofxAnimatable */,
+				CE95D7B218ABE78C005ED0FA /* ofxAnimatable */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -178,30 +184,30 @@
 			name = "3rd party frameworks";
 			sourceTree = "<group>";
 		};
-		CE45514918A57D2C00B523B8 /* ofxAnimatable */ = {
+		CE95D7B218ABE78C005ED0FA /* ofxAnimatable */ = {
 			isa = PBXGroup;
 			children = (
-				CE45514A18A57D4600B523B8 /* src */,
+				CE95D7B318ABE79D005ED0FA /* src */,
 			);
 			name = ofxAnimatable;
 			sourceTree = "<group>";
 		};
-		CE45514A18A57D4600B523B8 /* src */ = {
+		CE95D7B318ABE79D005ED0FA /* src */ = {
 			isa = PBXGroup;
 			children = (
-				CE45514B18A57D4600B523B8 /* ofxAnimatable.cpp */,
-				CE45514C18A57D4600B523B8 /* ofxAnimatable.h */,
-				CE45514D18A57D4600B523B8 /* ofxAnimatableFloat.cpp */,
-				CE45514E18A57D4600B523B8 /* ofxAnimatableFloat.h */,
-				CE45514F18A57D4600B523B8 /* ofxAnimatableImageMasked.h */,
-				CE45515018A57D4600B523B8 /* ofxAnimatableObject.h */,
-				CE45515118A57D4600B523B8 /* ofxAnimatableOfColor.cpp */,
-				CE45515218A57D4600B523B8 /* ofxAnimatableOfColor.h */,
-				CE45515318A57D4600B523B8 /* ofxAnimatableOfPoint.cpp */,
-				CE45515418A57D4600B523B8 /* ofxAnimatableOfPoint.h */,
+				CE95D7B418ABE79D005ED0FA /* ofxAnimatable.cpp */,
+				CE95D7B518ABE79D005ED0FA /* ofxAnimatable.h */,
+				CE95D7B618ABE79D005ED0FA /* ofxAnimatableFloat.cpp */,
+				CE95D7B718ABE79D005ED0FA /* ofxAnimatableFloat.h */,
+				CE95D7B818ABE79D005ED0FA /* ofxAnimatableImageMasked.h */,
+				CE95D7B918ABE79D005ED0FA /* ofxAnimatableObject.h */,
+				CE95D7BA18ABE79D005ED0FA /* ofxAnimatableOfColor.cpp */,
+				CE95D7BB18ABE79D005ED0FA /* ofxAnimatableOfColor.h */,
+				CE95D7BC18ABE79D005ED0FA /* ofxAnimatableOfPoint.cpp */,
+				CE95D7BD18ABE79D005ED0FA /* ofxAnimatableOfPoint.h */,
 			);
 			name = src;
-			path = "../../../addons/ofxAnimatable-Javi-Master/src";
+			path = ../../../addons/ofxAnimatable/src;
 			sourceTree = "<group>";
 		};
 		E4328144138ABC890047C5CB /* Products */ = {
@@ -248,6 +254,10 @@
 				CE7357CB18AB171E0029A412 /* FunkyRect.h */,
 				CE7357CD18AB30F10029A412 /* Wave.cpp */,
 				CE7357CE18AB30F10029A412 /* Wave.h */,
+				CE9EE3A618AC146800352B4A /* TriangleBlast.cpp */,
+				CE9EE3A718AC146800352B4A /* TriangleBlast.h */,
+				CE9EE3A918AC267D00352B4A /* Stripper.cpp */,
+				CE9EE3AA18AC267E00352B4A /* Stripper.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -351,13 +361,15 @@
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
 				CE45514818A57ADB00B523B8 /* Navigator.cpp in Sources */,
-				CE45515518A57D4600B523B8 /* ofxAnimatable.cpp in Sources */,
-				CE45515618A57D4600B523B8 /* ofxAnimatableFloat.cpp in Sources */,
-				CE45515718A57D4600B523B8 /* ofxAnimatableOfColor.cpp in Sources */,
-				CE45515818A57D4600B523B8 /* ofxAnimatableOfPoint.cpp in Sources */,
 				CE432EC618A9697700C07B93 /* ContentHolder.cpp in Sources */,
 				CE7357CC18AB171E0029A412 /* FunkyRect.cpp in Sources */,
 				CE7357CF18AB30F10029A412 /* Wave.cpp in Sources */,
+				CE95D7BE18ABE79D005ED0FA /* ofxAnimatable.cpp in Sources */,
+				CE95D7BF18ABE79D005ED0FA /* ofxAnimatableFloat.cpp in Sources */,
+				CE95D7C018ABE79D005ED0FA /* ofxAnimatableOfColor.cpp in Sources */,
+				CE95D7C118ABE79D005ED0FA /* ofxAnimatableOfPoint.cpp in Sources */,
+				CE9EE3A818AC146800352B4A /* TriangleBlast.cpp in Sources */,
+				CE9EE3AB18AC267E00352B4A /* Stripper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

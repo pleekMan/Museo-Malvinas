@@ -12,10 +12,10 @@
 
 void Wave::setup(){
 
-    size = 1;
-    pos = ofPoint(600,130);
+    size = 1.5;
+    pos = ofPoint(390,230);
     height = 25;
-    width = 200;
+    width = 280;
 
 }
 
@@ -26,10 +26,10 @@ void Wave::draw(){
     for (int i=0; i < ELEMENTS; i++) {
         
         offset = (TWO_PI/ELEMENTS) * i * 3;
-        x = size / 2 + i * size;
-        y = width / 2 + ofMap(sin(theta+offset), -1, 1, -height, height);
+        x = pos.x + (width / ELEMENTS) * i;
+        y = ofMap(sin(theta+offset), -1, 1, -height, height);
         
-        x += pos.x;
+        //x += pos.x;
         y += pos.y;
         
         ofSetColor(255, 255, 255);
@@ -40,5 +40,8 @@ void Wave::draw(){
     }
     
     theta += 0.05;
+    
+    //ofNoFill();
+    //ofRect(pos, width, height);
     
 }
